@@ -11,7 +11,7 @@ overlay.style.cssText = `
     width: 100%;
     height: 100%;
     background-color: rgba(255, 255, 255, 0.7);
-    z-index: 999;
+    z-index: 9999;
 `;
 
 // Adiciona o script do player de animação
@@ -22,7 +22,7 @@ document.head.appendChild(script);
 
 // Cria o elemento de animação
 const animation = document.createElement('dotlottie-player');
-animation.src = 'https://lottie.host/embed/54a2053a-bce8-42c8-9300-aff573aa6557/pTZXBfgCVW.json';
+animation.src = 'https://lottie.host/54a2053a-bce8-42c8-9300-aff573aa6557/pTZXBfgCVW.json';
 animation.background = 'transparent';
 animation.speed = '1';
 animation.style.width = '300px';
@@ -41,9 +41,8 @@ function hideOverlay() {
 
 // Adiciona um event listener para ocultar o overlay quando todos os arquivos JS externos forem carregados
 document.addEventListener('DOMContentLoaded', () => {
-    // Substitua as linhas abaixo pelo código real que carrega seus arquivos JS externos
-    // Para fins de demonstração, usaremos um setTimeout para simular o carregamento de arquivos JS externos.
-    setTimeout(hideOverlay, 1000); // Substitua pelo seu código real de carregamento.
+    // Simula o carregamento de arquivos externos
+    setTimeout(hideOverlay, 2000); // Ajuste o tempo conforme necessário
 });
 
 // Fallback: Se todos os recursos externos forem carregados e o evento DOMContentLoaded não disparar,
