@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Remove qualquer overlay existente
+    // Verificar e remover qualquer overlay existente
     const existingOverlay = document.getElementById('loader');
     if (existingOverlay) {
         existingOverlay.remove();
@@ -28,18 +28,14 @@ document.addEventListener('DOMContentLoaded', () => {
     lottieContainer.style.cssText = `
         width: 75px;
         height: 75px;
-        display: block;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
+        position: relative;
     `;
     overlay.appendChild(lottieContainer);
 
     // Carregar a animação Lottie
     lottie.loadAnimation({
         container: lottieContainer,
-        renderer: 'svg', // ou 'canvas' se preferir
+        renderer: 'svg',
         loop: true,
         autoplay: true,
         path: 'https://aicrus.github.io/FlutterFlow_preloader/LoadAicrusComponents.json',
