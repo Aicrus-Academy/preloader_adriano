@@ -20,7 +20,6 @@ lottieContainer.id = 'lottieContainer';
 lottieContainer.style.cssText = `
     width: 150px; // Ajuste o tamanho conforme necessário
     height: 150px;
-    display: none; // Inicialmente oculto
 `;
 
 // Adiciona os elementos ao corpo do documento
@@ -30,7 +29,6 @@ overlay.appendChild(lottieContainer); // Coloca o Lottie dentro do overlay
 // Função para ocultar o overlay e iniciar a animação Lottie
 function hideOverlay() {
     overlay.style.display = 'none';
-    lottieContainer.style.display = 'block';
     lottie.loadAnimation({
         container: lottieContainer,
         renderer: 'svg', // ou 'canvas'
@@ -40,8 +38,5 @@ function hideOverlay() {
     });
 }
 
-// Executa a função hideOverlay quando o documento estiver pronto
-document.addEventListener('DOMContentLoaded', hideOverlay);
-
-// Executa a função hideOverlay quando a página for totalmente carregada
+// Executa a função hideOverlay quando a página estiver totalmente carregada
 window.addEventListener('load', hideOverlay);
