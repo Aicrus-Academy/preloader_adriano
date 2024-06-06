@@ -34,7 +34,7 @@ function hideOverlay() {
         renderer: 'svg', // ou 'canvas'
         loop: true,
         autoplay: true,
-        path: 'https://aicrus.github.io/FlutterFlow_preloader/ac.json', // URL do arquivo JSON do Lottie
+        path: 'https://aicrus.github.io/FlutterFlow_preloader/LoadAicrusComponents.json', // URL do arquivo JSON do Lottie
     });
 }
 
