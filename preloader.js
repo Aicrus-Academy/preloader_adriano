@@ -16,8 +16,8 @@ overlay.style.cssText = `
 const lottieContainer = document.createElement('div');
 lottieContainer.id = 'lottieContainer';
 lottieContainer.style.cssText = `
-    width: 50px;
-    height: 50px;
+    width: 75px;
+    height: 75px;
     display: none;
     position: absolute;
     top: 50%;
@@ -29,8 +29,8 @@ document.body.appendChild(overlay);
 document.body.appendChild(lottieContainer);
 
 function hideOverlay() {
-    overlay.style.display = 'none';
-    lottieContainer.style.display = 'block';
+    if (overlay) overlay.style.display = 'none';
+    if (lottieContainer) lottieContainer.style.display = 'block';
     // Substitua pela URL direta do seu arquivo JSON do Lottie.
     lottie.loadAnimation({
         container: lottieContainer,
