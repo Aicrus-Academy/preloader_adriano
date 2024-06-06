@@ -14,17 +14,24 @@ overlay.style.cssText = `
     z-index: 9999;
 `;
 
-// Cria o elemento iframe
-const iframe = document.createElement('iframe');
-iframe.src = 'https://lottie.host/embed/54a2053a-bce8-42c8-9300-aff573aa6557/pTZXBfgCVW.json';
-iframe.style.cssText = `
-    width: 300px;
-    height: 300px;
-    border: none;
-`;
+// Adiciona o script do player de animação
+const script = document.createElement('script');
+script.src = 'https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs';
+script.type = 'module';
+document.head.appendChild(script);
+
+// Cria o elemento de animação
+const animation = document.createElement('dotlottie-player');
+animation.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kit-web-design-9lav4f/assets/zo6z05bxjair/Scene_4.json';
+animation.background = 'transparent';
+animation.speed = '1';
+animation.style.width = '300px';
+animation.style.height = '300px';
+animation.loop = true;
+animation.autoplay = true;
 
 // Adiciona os elementos ao body
-overlay.appendChild(iframe);
+overlay.appendChild(animation);
 document.body.appendChild(overlay);
 
 // Função para ocultar o overlay
