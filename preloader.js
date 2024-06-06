@@ -1,4 +1,4 @@
-// Cria o overlay e os elementos SVG
+// Cria o overlay e os elementos de animação
 const overlay = document.createElement('div');
 overlay.id = 'loader';
 overlay.style.cssText = `
@@ -14,29 +14,29 @@ overlay.style.cssText = `
     z-index: 999;
 `;
 
-const svgImage = document.createElement('img');
-svgImage.id = 'svgImage';
-// Substitua pelo caminho da sua nova animação JSON
-svgImage.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kit-web-design-9lav4f/assets/zo6z05bxjair/Scene_4.json';
-svgImage.style.cssText = `
-    max-width: 100%;
-    max-height: 100%;
-    display: none;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-`;
-svgImage.style.display = 'none';
+// Adiciona o script do player de animação
+const script = document.createElement('script');
+script.src = 'https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs';
+script.type = 'module';
+document.head.appendChild(script);
+
+// Cria o elemento de animação
+const animation = document.createElement('dotlottie-player');
+animation.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kit-web-design-9lav4f/assets/zo6z05bxjair/Scene_4.json'; // Substitua pelo caminho da sua animação .lottie
+animation.background = 'transparent';
+animation.speed = '1';
+animation.style.width = '300px';
+animation.style.height = '300px';
+animation.loop = true;
+animation.autoplay = true;
 
 // Adiciona os elementos ao body
+overlay.appendChild(animation);
 document.body.appendChild(overlay);
-document.body.appendChild(svgImage);
 
-// Função para ocultar o overlay e exibir o SVG
+// Função para ocultar o overlay e exibir a animação
 function hideOverlay() {
     overlay.style.display = 'none';
-    svgImage.style.display = 'block';
 }
 
 // Adiciona um event listener para ocultar o overlay quando todos os arquivos JS externos forem carregados
