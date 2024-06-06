@@ -1,4 +1,3 @@
-// Cria e estiliza o overlay de carregamento
 const overlay = document.createElement('div');
 overlay.id = 'loader';
 overlay.style.cssText = `
@@ -14,29 +13,37 @@ overlay.style.cssText = `
     z-index: 999;
 `;
 
-// Cria e estiliza o container do Lottie
 const lottieContainer = document.createElement('div');
 lottieContainer.id = 'lottieContainer';
 lottieContainer.style.cssText = `
-    width: 150px; // Ajuste o tamanho conforme necessário
-    height: 150px;
+    max-width: 100%;
+    max-height: 100%;
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 `;
+lottieContainer.style.display = 'none';
 
-// Adiciona os elementos ao corpo do documento
 document.body.appendChild(overlay);
-overlay.appendChild(lottieContainer); // Coloca o Lottie dentro do overlay
+document.body.appendChild(lottieContainer);
 
-// Função para ocultar o overlay e iniciar a animação Lottie
 function hideOverlay() {
     overlay.style.display = 'none';
+    lottieContainer.style.display = 'block';
+    // Substitua pela URL direta do seu arquivo JSON do Lottie.
     lottie.loadAnimation({
         container: lottieContainer,
-        renderer: 'svg', // ou 'canvas'
+        renderer: 'svg', // ou 'canvas' se preferir
         loop: true,
         autoplay: true,
-        path: 'https://aicrus.github.io/FlutterFlow_preloader/LoadAicrusComponents.json', // URL do arquivo JSON do Lottie
+        path: 'https://aicrus.github.io/FlutterFlow_preloader/LoadAicrusComponents.json',
     });
 }
 
-// Executa a função hideOverlay quando a página estiver totalmente carregada
+document.addEventListener('DOMContentLoaded', () => {
+    hideOverlay(); // Teste sem o setTimeout
+});
+
 window.addEventListener('load', hideOverlay);
