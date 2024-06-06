@@ -16,7 +16,7 @@ overlay.style.cssText = `
 
 const svgImage = document.createElement('img');
 svgImage.id = 'svgImage';
-// Substitua pelo caminho da sua nova animação
+// Substitua pelo caminho da sua nova animação JSON
 svgImage.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kit-web-design-9lav4f/assets/zo6z05bxjair/Scene_4.json';
 svgImage.style.cssText = `
     max-width: 100%;
