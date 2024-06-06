@@ -1,4 +1,4 @@
-// Create the overlay and Lottie elements
+// Cria o overlay e os elementos de animação
 const overlay = document.createElement('div');
 overlay.id = 'loader';
 overlay.style.cssText = `
@@ -14,38 +14,36 @@ overlay.style.cssText = `
     z-index: 9999;
 `;
 
-// Function to create and append the Lottie player element
-function createLottiePlayer() {
-    const animation = document.createElement('dotlottie-player');
-    animation.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kit-web-design-9lav4f/assets/zo6z05bxjair/Scene_4.json';
-    animation.background = 'transparent';
-    animation.speed = '1';
-    animation.style.width = '300px';
-    animation.style.height = '300px';
-    animation.loop = true;
-    animation.autoplay = true;
-    overlay.appendChild(animation);
-    document.body.appendChild(overlay);
-}
-
-// Add the script for the Lottie player
+// Adiciona o script do player de animação
 const script = document.createElement('script');
-script.src = 'https://unpkg.com/@dotlottie/player-component@latest/dist/dotlottie-player.mjs';
-script.type = 'module';
-script.onload = createLottiePlayer; // Ensure the Lottie player is created after the script loads
+script.src = 'https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js';
 document.head.appendChild(script);
 
-// Function to hide the overlay
+// Cria o elemento de animação
+const animation = document.createElement('lottie-player');
+animation.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kit-web-design-9lav4f/assets/zo6z05bxjair/Scene_4.json';
+animation.background = 'transparent';
+animation.speed = '1';
+animation.style.width = '300px';
+animation.style.height = '300px';
+animation.loop = true;
+animation.autoplay = true;
+
+// Adiciona os elementos ao body
+overlay.appendChild(animation);
+document.body.appendChild(overlay);
+
+// Função para ocultar o overlay
 function hideOverlay() {
     overlay.style.display = 'none';
 }
 
-// Add an event listener to hide the overlay when all external JS files are loaded
+// Adiciona um event listener para ocultar o overlay quando todos os arquivos JS externos forem carregados
 document.addEventListener('DOMContentLoaded', () => {
-    // Simulate loading external JS files
-    setTimeout(hideOverlay, 2000); // Adjust the time as needed
+    // Simula o carregamento de arquivos externos
+    setTimeout(hideOverlay, 2000); // Ajuste o tempo conforme necessário
 });
 
-// Fallback: If all external resources are loaded and the DOMContentLoaded event doesn't fire,
-// we'll still hide the overlay when the window's load event is triggered.
+// Fallback: Se todos os recursos externos forem carregados e o evento DOMContentLoaded não disparar,
+// ainda ocultaremos o overlay quando o evento de carregamento da janela for acionado.
 window.addEventListener('load', hideOverlay);
