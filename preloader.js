@@ -16,8 +16,8 @@ overlay.style.cssText = `
 const lottieContainer = document.createElement('div');
 lottieContainer.id = 'lottieContainer';
 lottieContainer.style.cssText = `
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     display: none;
     position: absolute;
     top: 50%;
