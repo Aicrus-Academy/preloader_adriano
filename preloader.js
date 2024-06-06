@@ -22,7 +22,7 @@ document.head.appendChild(script);
 
 // Cria o elemento de animação
 const animation = document.createElement('dotlottie-player');
-animation.src = 'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/kit-web-design-9lav4f/assets/zo6z05bxjair/Scene_4.json'; // Substitua pelo caminho da sua animação .lottie
+animation.src = 'https://lottie.host/embed/54a2053a-bce8-42c8-9300-aff573aa6557/pTZXBfgCVW.json';
 animation.background = 'transparent';
 animation.speed = '1';
 animation.style.width = '300px';
@@ -34,7 +34,7 @@ animation.autoplay = true;
 overlay.appendChild(animation);
 document.body.appendChild(overlay);
 
-// Função para ocultar o overlay e exibir a animação
+// Função para ocultar o overlay
 function hideOverlay() {
     overlay.style.display = 'none';
 }
@@ -43,7 +43,7 @@ function hideOverlay() {
 document.addEventListener('DOMContentLoaded', () => {
     // Substitua as linhas abaixo pelo código real que carrega seus arquivos JS externos
     // Para fins de demonstração, usaremos um setTimeout para simular o carregamento de arquivos JS externos.
-    setTimeout(hideOverlay, 100); // Substitua pelo seu código real de carregamento.
+    setTimeout(hideOverlay, 1000); // Substitua pelo seu código real de carregamento.
 });
 
 // Fallback: Se todos os recursos externos forem carregados e o evento DOMContentLoaded não disparar,
