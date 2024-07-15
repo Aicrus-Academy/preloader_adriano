@@ -37,7 +37,7 @@ function hideOverlay() {
         renderer: 'svg', // ou 'canvas' se preferir
         loop: true,
         autoplay: true,
-        path: 'https://aicrus-academy.github.io/preloader_adriano/Animation.json',
+        path: 'https://aicrus-academy.github.io/preloader_adriano/Animation2.json',
     });
 }
 
