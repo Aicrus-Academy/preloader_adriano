@@ -16,15 +16,14 @@ overlay.style.cssText = `
 const lottieContainer = document.createElement('div');
 lottieContainer.id = 'lottieContainer';
 lottieContainer.style.cssText = `
-    max-width: 100%;
-    max-height: 100%;
+    width: 300px;  /* Ajuste o tamanho desejado aqui */
+    height: 300px; /* Ajuste o tamanho desejado aqui */
     display: none;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 `;
-lottieContainer.style.display = 'none';
 
 document.body.appendChild(overlay);
 document.body.appendChild(lottieContainer);
