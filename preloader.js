@@ -38,7 +38,7 @@ function hideOverlay() {
         renderer: 'svg', // ou 'canvas' se preferir
         loop: true,
         autoplay: true,
-        path: 'https://aicrus.github.io/FlutterFlow_preloader/Animation01.json',
+        path: 'https://aicrus.github.io/FlutterFlow_preloader/Animation.json',
     });
 }
 
